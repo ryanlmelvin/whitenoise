@@ -83,6 +83,7 @@ for (const dialog of document.querySelectorAll('dialog')) {
   });
 }
 $('#about-button').addEventListener('click', () => $('#about-dialog').showModal());
+$('#headphone-safety-button').addEventListener('click', () => $('#headphone-safety-dialog').showModal());
 
 let installPrompt;
 let offlineReady = false;

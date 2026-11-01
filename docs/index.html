@@ -56,11 +56,14 @@
           <span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
           <div><p class="player-label" id="player-label">READY WHEN YOU ARE</p><p class="player-title" id="player-title">Box fan</p></div>
         </div>
-        <div class="volume-control">
-          <svg class="volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15 8c2 2 2 6 0 8m3-11c4 4 4 10 0 14"/></svg>
-          <label class="visually-hidden" for="volume">Volume</label>
-          <input id="volume" type="range" min="0" max="100" value="45" aria-valuetext="45 percent">
-          <output for="volume" id="volume-value">45%</output>
+        <div class="volume-group">
+          <div class="volume-control">
+            <svg class="volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15 8c2 2 2 6 0 8m3-11c4 4 4 10 0 14"/></svg>
+            <label class="visually-hidden" for="volume">Volume</label>
+            <input id="volume" type="range" min="0" max="100" value="45" aria-valuetext="45 percent">
+            <output for="volume" id="volume-value">45%</output>
+          </div>
+          <button class="headphone-safety-button" id="headphone-safety-button" aria-haspopup="dialog" aria-controls="headphone-safety-dialog">Headphone safety</button>
         </div>
         <button class="play-button" id="play-button" aria-label="Play Box fan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6Z"/></svg></button>
       </section>
@@ -85,6 +88,21 @@
     <p>The app’s code is MIT licensed. Recordings and original sound assets are CC0, with source credits included.</p>
     <div class="dialog-links"><a href="https://github.com/ryanlmelvin/whitenoise" target="_blank" rel="noopener">View the code ↗</a><a href="./audio/LICENSE.txt" target="_blank" rel="noopener">Sound credits ↗</a></div>
     <p class="dialog-small">Made by <a href="https://ryanlmelvin.com">Ryan L. Melvin</a> · Still 1.0</p>
+  </dialog>
+  <dialog id="headphone-safety-dialog" aria-labelledby="headphone-safety-title">
+    <button class="dialog-close" aria-label="Close headphone safety">×</button>
+    <p class="eyebrow">KEEP YOUR QUIET COMFORTABLE</p>
+    <h2 id="headphone-safety-title">Headphone safety</h2>
+    <p>For Still, set your iPhone’s headphone limit to <strong>80 dB or lower</strong>. Treat it as a ceiling, not a listening target. For sleep or long sessions, choose a lower limit and keep playback much quieter, at the lowest useful level.</p>
+    <h3>Set a limit on iPhone</h3>
+    <ol>
+      <li>Open <strong>Settings → Sounds &amp; Haptics → Headphone Safety</strong>.</li>
+      <li>Turn on <strong>Reduce Loud Audio</strong>.</li>
+      <li>Move the slider to <strong>80 decibels or lower</strong>.</li>
+    </ol>
+    <p class="device-note"><strong>A volume limit is not a safety guarantee.</strong> NIOSH’s workplace limit is 85 dBA averaged over eight hours. It does not protect everyone from all hearing damage and is not a recommended overnight listening level. Your total sound exposure matters.</p>
+    <p>This iPhone setting applies to headphone audio. Apple’s level estimates are most accurate with Apple or Beats headphones; other headphones may be estimated from phone volume. Still’s percentage slider cannot measure or guarantee the sound level at your ears.</p>
+    <div class="dialog-links"><a href="https://support.apple.com/en-ie/guide/iphone/iph0596a9152/ios" target="_blank" rel="noopener">Apple setup guide ↗</a><a href="https://www.cdc.gov/niosh/bulletin/2016/noise.html" target="_blank" rel="noopener">NIOSH guidance ↗</a></div>
   </dialog>
   <dialog id="install-dialog" aria-labelledby="install-title">
     <button class="dialog-close" aria-label="Close installation instructions">×</button>
