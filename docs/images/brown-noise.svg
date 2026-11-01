@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" fill="none">
+  <defs>
+    <radialGradient id="halo"><stop stop-color="#b99b7c" stop-opacity=".12"/><stop offset="1" stop-color="#b99b7c" stop-opacity="0"/></radialGradient>
+    <linearGradient id="sky" x1="180" y1="30" x2="180" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#2e3837"/><stop offset="1" stop-color="#5c6051"/></linearGradient>
+    <linearGradient id="dune" x1="170" y1="100" x2="190" y2="176" gradientUnits="userSpaceOnUse"><stop stop-color="#b49876"/><stop offset="1" stop-color="#7c7660"/></linearGradient>
+    <clipPath id="scene"><rect x="89" y="27" width="182" height="145" rx="73"/></clipPath>
+  </defs>
+  <ellipse cx="180" cy="105" rx="115" ry="89" fill="url(#halo)"/>
+  <g clip-path="url(#scene)">
+    <rect x="89" y="27" width="182" height="145" fill="url(#sky)"/>
+    <circle cx="208" cy="62" r="14" fill="#c1b18c" opacity=".65"/>
+    <path d="M82 122c35-40 62-38 91-18 32 22 56 18 107-22v97H82Z" fill="#626f5e"/>
+    <path d="M82 145c34-7 58-13 93-36 34-23 66-7 106 21v49H82Z" fill="url(#dune)"/>
+    <path d="M82 150c27-34 63-32 100-9 31 19 58 23 100 4v34H82Z" fill="#516457"/>
+    <path d="M96 146c29-20 50-13 75 1" stroke="#91a087" stroke-opacity=".4" stroke-width="1.2"/>
+    <path d="M167 117c35-22 54-23 83-8" stroke="#ddc5a1" stroke-opacity=".3" stroke-width="1.2"/>
+  </g>
+  <path d="M114 183h132" stroke="#a7af9a" stroke-opacity=".16" stroke-linecap="round"/>
+</svg>

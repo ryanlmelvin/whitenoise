@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Still — A little quiet",
+  "short_name": "Still",
+  "description": "Four comforting sounds, on repeat. Free, ad-free, and ready offline.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10171c",
+  "theme_color": "#10171c",
+  "categories": ["lifestyle", "music"],
+  "icons": [
+    { "src": "./images/app-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./images/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

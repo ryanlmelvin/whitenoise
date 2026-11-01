@@ -1,0 +1,129 @@
+{
+  "method": "Sliding circular RMS, 1 ms hop; PCM16 samples / 32768",
+  "tracks": [
+    {
+      "file": "box-fan.wav",
+      "duration_seconds": 30,
+      "sample_rate": 24000,
+      "rms_dbfs": -23.0003,
+      "peak_dbfs": -13.5169,
+      "crest_factor_db": 9.4833,
+      "clipped_samples": 0,
+      "dc_offset": -2.0345052083333333e-8,
+      "seam_step": 0.000701904296875,
+      "normal_step_99th_percentile": 0.033355712890625,
+      "maximum_10ms_to_250ms_db": 5.4429,
+      "windows": {
+        "10": {
+          "minimum_dbfs": -32.0009,
+          "maximum_dbfs": -18.2743
+        },
+        "50": {
+          "minimum_dbfs": -28.2414,
+          "maximum_dbfs": -20.5498
+        },
+        "250": {
+          "minimum_dbfs": -25.1234,
+          "maximum_dbfs": -22.092
+        },
+        "1000": {
+          "minimum_dbfs": -23.5194,
+          "maximum_dbfs": -22.5606
+        }
+      }
+    },
+    {
+      "file": "rain.wav",
+      "duration_seconds": 30,
+      "sample_rate": 24000,
+      "rms_dbfs": -23.0003,
+      "peak_dbfs": -13.246,
+      "crest_factor_db": 9.7543,
+      "clipped_samples": 0,
+      "dc_offset": -1.3224283854166666e-8,
+      "seam_step": 0.008453369140625,
+      "normal_step_99th_percentile": 0.13018798828125,
+      "maximum_10ms_to_250ms_db": 3.8467,
+      "windows": {
+        "10": {
+          "minimum_dbfs": -27.5831,
+          "maximum_dbfs": -19.3526
+        },
+        "50": {
+          "minimum_dbfs": -25.9183,
+          "maximum_dbfs": -21.0367
+        },
+        "250": {
+          "minimum_dbfs": -24.1063,
+          "maximum_dbfs": -22.5452
+        },
+        "1000": {
+          "minimum_dbfs": -23.4325,
+          "maximum_dbfs": -22.8621
+        }
+      }
+    },
+    {
+      "file": "white-noise.wav",
+      "duration_seconds": 30,
+      "sample_rate": 24000,
+      "rms_dbfs": -23.0003,
+      "peak_dbfs": -13.8148,
+      "crest_factor_db": 9.1855,
+      "clipped_samples": 0,
+      "dc_offset": -5.552503797743056e-9,
+      "seam_step": 0.01806640625,
+      "normal_step_99th_percentile": 0.244903564453125,
+      "maximum_10ms_to_250ms_db": 1.2348,
+      "windows": {
+        "10": {
+          "minimum_dbfs": -24.9366,
+          "maximum_dbfs": -21.7515
+        },
+        "50": {
+          "minimum_dbfs": -23.5164,
+          "maximum_dbfs": -22.5127
+        },
+        "250": {
+          "minimum_dbfs": -23.1323,
+          "maximum_dbfs": -22.8768
+        },
+        "1000": {
+          "minimum_dbfs": -23.0367,
+          "maximum_dbfs": -22.9675
+        }
+      }
+    },
+    {
+      "file": "brown-noise.wav",
+      "duration_seconds": 30,
+      "sample_rate": 24000,
+      "rms_dbfs": -23.0003,
+      "peak_dbfs": -14.2617,
+      "crest_factor_db": 8.7385,
+      "clipped_samples": 0,
+      "dc_offset": 3.814697265625e-10,
+      "seam_step": 0.00006103515625,
+      "normal_step_99th_percentile": 0.024749755859375,
+      "maximum_10ms_to_250ms_db": 5.5208,
+      "windows": {
+        "10": {
+          "minimum_dbfs": -33.2542,
+          "maximum_dbfs": -17.9193
+        },
+        "50": {
+          "minimum_dbfs": -28.6382,
+          "maximum_dbfs": -20.298
+        },
+        "250": {
+          "minimum_dbfs": -24.6427,
+          "maximum_dbfs": -22.1444
+        },
+        "1000": {
+          "minimum_dbfs": -23.3027,
+          "maximum_dbfs": -22.7349
+        }
+      }
+    }
+  ]
+}

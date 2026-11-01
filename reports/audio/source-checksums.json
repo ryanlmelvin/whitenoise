@@ -1,0 +1,10 @@
+{
+  "box-fan-source.mp3": {
+    "url": "https://cdn.freesound.org/previews/824/824852_17819872-hq.mp3",
+    "sha256": "81d762a382973e02aef36024ef3444acef94e83e534bbb4dbc78716c5a2c5a79"
+  },
+  "rain.zip": {
+    "url": "https://opengameart.org/sites/default/files/Rain%20OGG.zip",
+    "sha256": "e68f3e1c77493cf43bec84cebff5043bff6be9ce16d59b24caa988cd460aa75b"
+  }
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" fill="none">
+  <defs>
+    <radialGradient id="halo"><stop stop-color="#78948a" stop-opacity=".16"/><stop offset="1" stop-color="#78948a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="frame" x1="110" y1="20" x2="253" y2="175" gradientUnits="userSpaceOnUse"><stop stop-color="#bdd0c5"/><stop offset="1" stop-color="#829b91"/></linearGradient>
+    <clipPath id="grille"><rect x="122" y="36" width="116" height="119" rx="9"/></clipPath>
+    <pattern id="grid" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 0H9M0 0V9" stroke="#b4c9bc" stroke-width="1" opacity=".48"/></pattern>
+  </defs>
+  <ellipse cx="180" cy="107" rx="115" ry="88" fill="url(#halo)"/>
+  <ellipse cx="180" cy="177" rx="81" ry="7" fill="#080e10" opacity=".3"/>
+  <path d="M131 165v10h18v-10m62 0v10h18v-10" fill="#829b91"/>
+  <path d="M163 24v-6h34v6" stroke="#93aa9e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="111" y="24" width="138" height="143" rx="15" fill="url(#frame)"/>
+  <rect x="118" y="31" width="124" height="128" rx="12" fill="#213532"/>
+  <g clip-path="url(#grille)">
+    <circle cx="180" cy="95" r="54" fill="#2d4540"/>
+    <g fill="#829d8e">
+      <path d="M177 91c-19-4-35-14-33-28 2-11 18-15 28-8 13 9 15 22 12 36Z"/>
+      <path d="M184 91c4-19 14-35 28-33 11 2 15 18 8 28-9 13-22 15-36 12Z"/>
+      <path d="M184 98c19 4 35 14 33 28-2 11-18 15-28 8-13-9-15-22-12-36Z"/>
+      <path d="M177 98c-4 19-14 35-28 33-11-2-15-18-8-28 9-13 22-15 36-12Z"/>
+    </g>
+    <rect x="122" y="36" width="116" height="119" fill="url(#grid)"/>
+    <circle cx="180" cy="95" r="55" stroke="#b4c9bc" stroke-width="1.5" opacity=".55"/>
+    <circle cx="180" cy="95" r="10" fill="#b7ccbe"/>
+    <circle cx="180" cy="95" r="4" fill="#829b8c"/>
+  </g>
+  <path d="M133 163h18m58 0h18" stroke="#d1ded4" stroke-opacity=".35" stroke-linecap="round"/>
+  <circle cx="238" cy="160" r="2.3" fill="#3c5750"/>
+</svg>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10171c">
+  <meta name="description" content="Four comforting sounds, on repeat. A free, ad-free sleep sound app that works offline.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Still">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+  <title>Still · A little quiet</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Still home"><img src="./images/favicon.svg" width="30" height="30" alt="">still<span class="wordmark-dot">.</span></a>
+      <button class="text-button about-button" id="about-button">About <span aria-hidden="true">↗</span></button>
+    </header>
+    <main>
+      <div class="intro">
+        <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✦</span> MAKE ROOM FOR REST</p>
+        <h1>A little quiet.</h1>
+        <p class="intro-copy">Pick a sound. Settle in. Stay awhile.</p>
+      </div>
+
+      <section class="sound-grid" aria-label="Choose a sound">
+        <button class="sound-card" data-sound="box-fan" aria-pressed="false" aria-label="Play Box fan">
+          <span class="card-top"><span class="sound-number">01</span><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
+          <img class="sound-art" src="./images/fan.svg" alt="" width="360" height="200">
+          <span class="card-copy"><span class="sound-title">Box fan</span><span class="sound-description">That familiar, steady hum.</span></span>
+        </button>
+        <button class="sound-card" data-sound="rain" aria-pressed="false" aria-label="Play Rain">
+          <span class="card-top"><span class="sound-number">02</span><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
+          <img class="sound-art" src="./images/rain.svg" alt="" width="360" height="200">
+          <span class="card-copy"><span class="sound-title">Rain</span><span class="sound-description">A rainy day, whenever you like.</span></span>
+        </button>
+        <button class="sound-card" data-sound="white-noise" aria-pressed="false" aria-label="Play White noise">
+          <span class="card-top"><span class="sound-number">03</span><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
+          <img class="sound-art" src="./images/white-noise.svg" alt="" width="360" height="200">
+          <span class="card-copy"><span class="sound-title">White noise</span><span class="sound-description">An even wash of sound.</span></span>
+        </button>
+        <button class="sound-card" data-sound="brown-noise" aria-pressed="false" aria-label="Play Brown noise">
+          <span class="card-top"><span class="sound-number">04</span><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
+          <img class="sound-art" src="./images/brown-noise.svg" alt="" width="360" height="200">
+          <span class="card-copy"><span class="sound-title">Brown noise</span><span class="sound-description">A deeper, softer kind of hush.</span></span>
+        </button>
+      </section>
+
+      <section class="player" aria-label="Playback controls">
+        <div class="now-playing">
+          <span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <div><p class="player-label" id="player-label">READY WHEN YOU ARE</p><p class="player-title" id="player-title">Box fan</p></div>
+        </div>
+        <div class="volume-control">
+          <svg class="volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15 8c2 2 2 6 0 8m3-11c4 4 4 10 0 14"/></svg>
+          <label class="visually-hidden" for="volume">Volume</label>
+          <input id="volume" type="range" min="0" max="100" value="45" aria-valuetext="45 percent">
+          <output for="volume" id="volume-value">45%</output>
+        </div>
+        <button class="play-button" id="play-button" aria-label="Play Box fan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6Z"/></svg></button>
+      </section>
+      <p class="playback-note" id="playback-note" role="status" aria-live="polite">Loops gently until you press pause.</p>
+
+      <div class="install-row">
+        <span class="offline-status" id="offline-status"><span aria-hidden="true"></span>Preparing for offline use</span>
+        <button class="install-button" id="install-button"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M4 13v4h12v-4"/></svg>Install on device</button>
+      </div>
+      <div class="update-notice" id="update-notice" hidden><p>A fresh version is ready.</p><button id="update-button" class="text-button">Update now</button></div>
+    </main>
+    <footer><p>No ads. No accounts. Just a little quiet.</p><span class="footer-mark" aria-hidden="true">✧</span></footer>
+  </div>
+
+  <dialog id="about-dialog" aria-labelledby="about-title">
+    <button class="dialog-close" aria-label="Close About">×</button>
+    <p class="eyebrow">A SMALL, OPEN-SOURCE THING</p>
+    <h2 id="about-title">Quiet, without the extras.</h2>
+    <p>Still is four comforting sounds and a place to slow down. Free to use, with no ads, accounts, analytics, or subscriptions.</p>
+    <p>Every sound is prepared as a seamless, lossless loop and checked for gaps and sudden peaks. Playback fades gently in and out. Once you see “Ready offline,” all four sounds are saved on this device.</p>
+    <p class="device-note">Background playback depends on your browser and device. Try locking your screen before relying on it overnight. Calls and other audio can interrupt playback; tap play to resume.</p>
+    <p>The app’s code is MIT licensed. Recordings and original sound assets are CC0, with source credits included.</p>
+    <div class="dialog-links"><a href="https://github.com/ryanlmelvin/whitenoise" target="_blank" rel="noopener">View the code ↗</a><a href="./audio/LICENSE.txt" target="_blank" rel="noopener">Sound credits ↗</a></div>
+    <p class="dialog-small">Made by <a href="https://ryanlmelvin.com">Ryan L. Melvin</a> · Still 1.0</p>
+  </dialog>
+  <dialog id="install-dialog" aria-labelledby="install-title">
+    <button class="dialog-close" aria-label="Close installation instructions">×</button>
+    <p class="eyebrow">A LITTLE QUIET, CLOSE BY</p>
+    <h2 id="install-title">Make yourself at home.</h2>
+    <p>Add Still to your home screen to open it like an app.</p>
+    <div id="install-instructions"></div>
+    <p class="dialog-small" id="install-offline-note">Keep Still open until “Ready offline” appears to save all four sounds.</p>
+  </dialog>
+  <noscript><p class="noscript">Still needs JavaScript to play sounds. Please enable it and reload.</p></noscript>
+</body>
+</html>

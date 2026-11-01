@@ -1,0 +1,13 @@
+{
+  "name": "still-whitenoise",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Four seamless sounds. An ad-free, offline sleep sound PWA.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "python3 -m http.server 4186 --bind 127.0.0.1 --directory docs",
+    "test": "node --test",
+    "check": "node scripts/check.mjs"
+  }
+}

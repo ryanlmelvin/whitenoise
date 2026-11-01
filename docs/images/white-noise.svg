@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" fill="none">
+  <defs>
+    <radialGradient id="halo"><stop stop-color="#afc6c4" stop-opacity=".16"/><stop offset="1" stop-color="#afc6c4" stop-opacity="0"/></radialGradient>
+    <linearGradient id="wave" x1="84" y1="50" x2="276" y2="152" gradientUnits="userSpaceOnUse"><stop stop-color="#728f94"/><stop offset=".5" stop-color="#c2d3cd"/><stop offset="1" stop-color="#728f94"/></linearGradient>
+  </defs>
+  <ellipse cx="180" cy="100" rx="118" ry="88" fill="url(#halo)"/>
+  <circle cx="180" cy="100" r="67" fill="#adc5bf" fill-opacity=".025" stroke="#97b5b0" stroke-opacity=".12"/>
+  <circle cx="180" cy="100" r="48" stroke="#97b5b0" stroke-opacity=".1"/>
+  <g stroke="url(#wave)" stroke-linecap="round" stroke-width="5">
+    <path d="M84 96v8" opacity=".35"/>
+    <path d="M96 86v28" opacity=".45"/>
+    <path d="M108 74v52" opacity=".55"/>
+    <path d="M120 85v30" opacity=".65"/>
+    <path d="M132 64v72" opacity=".7"/>
+    <path d="M144 54v92" opacity=".8"/>
+    <path d="M156 69v62" opacity=".85"/>
+    <path d="M168 44v112" opacity=".95"/>
+    <path d="M180 56v88"/>
+    <path d="M192 48v104" opacity=".95"/>
+    <path d="M204 65v70" opacity=".85"/>
+    <path d="M216 76v48" opacity=".8"/>
+    <path d="M228 62v76" opacity=".7"/>
+    <path d="M240 80v40" opacity=".65"/>
+    <path d="M252 85v30" opacity=".55"/>
+    <path d="M264 92v16" opacity=".45"/>
+    <path d="M276 97v6" opacity=".35"/>
+  </g>
+</svg>

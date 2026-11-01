@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" fill="none">
+  <defs>
+    <radialGradient id="halo"><stop stop-color="#6e929e" stop-opacity=".16"/><stop offset="1" stop-color="#6e929e" stop-opacity="0"/></radialGradient>
+    <linearGradient id="sky" x1="180" y1="25" x2="180" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#253e4b"/><stop offset="1" stop-color="#365653"/></linearGradient>
+    <clipPath id="window"><rect x="123" y="31" width="114" height="131" rx="3"/></clipPath>
+  </defs>
+  <ellipse cx="180" cy="105" rx="110" ry="88" fill="url(#halo)"/>
+  <ellipse cx="180" cy="178" rx="80" ry="6" fill="#080e10" opacity=".25"/>
+  <rect x="115" y="23" width="130" height="147" rx="7" fill="#6f8888"/>
+  <rect x="121" y="29" width="118" height="135" rx="4" fill="url(#sky)"/>
+  <g clip-path="url(#window)">
+    <circle cx="211" cy="54" r="12" fill="#b6c9be" opacity=".65"/>
+    <circle cx="217" cy="49" r="12" fill="#29424d"/>
+    <path d="M111 151c29-25 51-23 78-12 29-29 47-30 70-19v49H111Z" fill="#223b3d"/>
+    <g stroke="#9fbfc5" stroke-linecap="round">
+      <path d="m138 44-4 11m23 15-5 14m16-44-3 9m62 22-4 12m-24 3-4 12m-12-37-4 12m-48 31-4 11m25 16-4 11m32-26-5 14m46-22-4 11m-12 20-5 14m-40 7-3 8" opacity=".67" stroke-width="1.5"/>
+      <path d="m149 34-2 6m22 69-2 6m55-64-2 6m-29 77-2 6m-54-2-2 6m39-52-2 6m-17-38-2 6m60 39-2 6" opacity=".32"/>
+    </g>
+  </g>
+  <path d="M180 30v133M122 96h115" stroke="#779390" stroke-width="5"/>
+  <path d="M177 31v62M124 93h51" stroke="#acc2ba" stroke-opacity=".35" stroke-width="1.5"/>
+  <path d="M110 170h140v6H110z" fill="#96aaa1"/>
+  <path d="M110 170h140" stroke="#c1cec3" stroke-opacity=".45" stroke-width="1.5"/>
+</svg>
