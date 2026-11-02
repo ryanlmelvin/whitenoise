@@ -84,8 +84,71 @@
     <p>Every sound is prepared as a seamless, lossless loop and checked for gaps and sudden peaks. Playback fades gently in and out. Once you see “Ready offline,” all four sounds are saved on this device.</p>
     <p class="device-note">Background playback depends on your browser and device. Try locking your screen before relying on it overnight. Calls and other audio can interrupt playback; tap play to resume.</p>
     <p>The app’s code is MIT licensed. Recordings and original sound assets are CC0, with source credits included.</p>
-    <div class="dialog-links"><a href="https://github.com/ryanlmelvin/whitenoise" target="_blank" rel="noopener">View the code ↗</a><a href="./audio/LICENSE.txt" target="_blank" rel="noopener">Sound credits ↗</a></div>
+    <div class="dialog-links"><a href="https://github.com/ryanlmelvin/whitenoise" target="_blank" rel="noopener">View the code ↗</a><button class="text-button" id="sound-credits-button">Sound credits</button></div>
     <p class="dialog-small">Made by <a href="https://ryanlmelvin.com">Ryan L. Melvin</a> · Still 1.0</p>
+  </dialog>
+  <dialog id="sound-credits-dialog" aria-labelledby="sound-credits-title">
+    <button class="dialog-close" aria-label="Close sound credits">×</button>
+    <h2 id="sound-credits-title">Sound credits</h2>
+    <pre class="sound-credits">Whitenoise audio sources and licenses
+Verified 2026-11-01
+
+The app&#x27;s code is MIT licensed (see the repository LICENSE). All four bundled
+audio files are CC0 1.0 Universal. The two third-party recordings below retain
+their original CC0 provenance. Original generated white and brown noise are also
+dedicated to the public domain under CC0. Including these assets does not impose
+a different license on the app&#x27;s code. Attribution is offered voluntarily.
+
+CC0 deed: https://creativecommons.org/publicdomain/zero/1.0/
+CC0 legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+CC0 permits copying, modification, distribution, and commercial use without
+asking permission. No endorsement by the original artists is implied.
+
+box-fan.wav
+  Original title: box_fan
+  Artist: ffdm
+  Source: https://freesound.org/people/ffdm/sounds/824852/
+  Licensed source preview:
+  https://cdn.freesound.org/previews/824/824852_17819872-hq.mp3
+  License: CC0 1.0 Universal, as stated on the sound&#x27;s source page.
+  Recording: Lasko box fan on high speed, recorded with an iPhone 14.
+  Preparation: Used seconds 36–69 of the recording; mono 24 kHz decode,
+  wind-rumble reduction (90 Hz high-pass), 7.5 kHz high-frequency rolloff,
+  3-second equal-power endpoint overlap, circular smooth RMS leveling,
+  transient gain reduction, smooth peak limiting, normalized to -23 dBFS RMS.
+  The exported PCM16 WAV loop is 30 seconds, with no codec padding or silence.
+
+rain.wav
+  Original collection: Rain (loopable)
+  Original file: 4.ogg from Rain OGG.zip
+  Artist: Ylmir
+  Source: https://opengameart.org/content/rain-loopable
+  Download: https://opengameart.org/sites/default/files/Rain%20OGG.zip
+  License: CC0 1.0 Universal, as stated on the source page.
+  Preparation: Used seconds 2–35; mono 24 kHz decode, 90 Hz high-pass,
+  8.5 kHz high-frequency rolloff, 3-second equal-power endpoint overlap,
+  circular smooth RMS leveling, transient gain reduction, smooth peak
+  limiting, normalized to -23 dBFS RMS. Exported 30-second PCM16 WAV loop.
+
+white-noise.wav
+  Original procedural audio generated for this project; no third-party samples.
+  License: CC0 1.0 Universal (public domain dedication).
+  Deterministic seeded broadband noise, smooth RMS and peak control.
+  30-second mono 24 kHz PCM16 WAV, normalized to -23 dBFS RMS.
+
+brown-noise.wav
+  Original procedural audio generated for this project; no third-party samples.
+  License: CC0 1.0 Universal (public domain dedication).
+  Deterministic seeded noise with 1/f amplitude shaping (1/f² power), 40 Hz
+  low-frequency floor, zero DC, and smooth RMS and peak control.
+  30-second mono 24 kHz PCM16 WAV, normalized to -23 dBFS RMS.
+
+Reproduction: scripts/prepare-audio.py
+Source SHA-256 hashes: reports/audio/source-checksums.json
+Whole-track and loop-boundary validation: scripts/check-audio.mjs
+Waveform plots and measurements: reports/audio/
+</pre>
+    <button class="text-button" id="credits-back-button">← Back to About</button>
   </dialog>
   <dialog id="headphone-safety-dialog" aria-labelledby="headphone-safety-title">
     <button class="dialog-close" aria-label="Close headphone safety">×</button>

@@ -12,3 +12,6 @@
 html{min-height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .app-shell{display:flow-root}
+
+.sound-credits{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.75 var(--sans, sans-serif);color:var(--muted)}
+.dialog-links .text-button{padding:0;color:var(--accent);font-size:inherit;text-decoration:underline;text-underline-offset:4px}

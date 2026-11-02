@@ -83,6 +83,8 @@ for (const dialog of document.querySelectorAll('dialog')) {
     if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
   });
 }
+$('#sound-credits-button').addEventListener('click', () => $('#sound-credits-dialog').showModal());
+$('#credits-back-button').addEventListener('click', () => $('#sound-credits-dialog').close());
 $('#about-button').addEventListener('click', () => $('#about-dialog').showModal());
 $('#headphone-safety-button').addEventListener('click', () => $('#headphone-safety-dialog').showModal());
 
