@@ -25,7 +25,7 @@ class Worker extends EventTarget {
   transition(state) { this.state = state; this.dispatchEvent(new Event('statechange')); }
 }
 
-function setup(register) {
+function setup(register, { playing = true } = {}) {
   const elements = new Map();
   const $ = selector => {
     if (!elements.has(selector)) {
@@ -44,15 +44,16 @@ function setup(register) {
   const serviceWorker = new EventTarget();
   serviceWorker.register = register;
   const window = new EventTarget();
+  const document = Object.assign(new EventTarget(), { visibilityState: 'visible' });
   let reloads = 0;
   const context = vm.createContext({
-    $, window, navigator: { serviceWorker, onLine: true },
-    offlineReady: false, busy: () => true,
+    $, window, document, navigator: { serviceWorker, onLine: true },
+    offlineReady: false, busy: () => playing,
     MessageChannel: Channel, setTimeout, clearTimeout,
     location: { reload() { reloads++; } },
   });
   vm.runInContext(code, context);
-  return { $, context, window, serviceWorker, reloads: () => reloads };
+  return { $, context, window, document, serviceWorker, reloads: () => reloads };
 }
 
 function registration(active, installing) {
@@ -117,5 +118,36 @@ test('a later online event repairs cache loss and clears stale offline readiness
   app.window.dispatchEvent(new Event('online'));
   await settle();
   assert.equal(app.context.offlineReady, true);
+  assert.equal(app.reloads(), 0);
+});
+
+
+test('returning to an open app checks for updates and offers a waiting version', async () => {
+  const reg = registration(new Worker());
+  let checks = 0;
+  reg.update = async () => { if (++checks === 2) reg.waiting = new Worker('installed'); };
+  const app = setup(async () => reg, { playing: false });
+  await settle();
+  assert.equal(checks, 1);
+  assert.equal(app.$('#update-notice').hidden, true);
+  app.document.dispatchEvent(new Event('visibilitychange'));
+  await settle();
+  assert.equal(checks, 2);
+  assert.equal(app.$('#update-notice').hidden, false);
+  assert.equal(app.reloads(), 0);
+  app.$('#update-button').dispatchEvent(new Event('click'));
+  assert.deepEqual(reg.waiting.messages, ['ACTIVATE_UPDATE']);
+  app.serviceWorker.dispatchEvent(new Event('controllerchange'));
+  assert.equal(app.reloads(), 1);
+});
+
+test('finding an update during playback never activates or reloads it', async () => {
+  const reg = registration(new Worker());
+  reg.update = async () => { reg.waiting = new Worker('installed'); };
+  const app = setup(async () => reg);
+  await settle();
+  assert.equal(app.$('#update-notice').hidden, true);
+  app.$('#update-button').dispatchEvent(new Event('click'));
+  assert.deepEqual(reg.waiting.messages, []);
   assert.equal(app.reloads(), 0);
 });

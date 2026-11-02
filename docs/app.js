@@ -181,7 +181,11 @@ function watchInstallingWorker(worker) {
   if (!worker || watchedWorkers.has(worker)) return;
   watchedWorkers.add(worker);
   const stateChanged = () => {
-    if (worker.state === 'installed') showUpdate();
+    if (worker.state === 'installed') {
+      showUpdate();
+      // The registration's waiting slot may settle after this state event.
+      setTimeout(showUpdate, 0);
+    }
     if (worker.state === 'activated') verifyOfflineCache(worker);
     if (worker.state === 'redundant' && !offlineReady) showOfflineIncomplete();
   };
@@ -202,10 +206,10 @@ function prepareOffline() {
       }
       watchInstallingWorker(reg.installing);
       if (reg.active) await verifyOfflineCache(reg.active);
-      else if (!reg.installing && !reg.waiting && navigator.onLine) {
-        await reg.update();
+      if (!reg.installing && !reg.waiting && navigator.onLine) {
+        try { await reg.update(); } catch { /* Keep cached playback available if the update check fails. */ }
         watchInstallingWorker(reg.installing);
-        if (reg.active) await verifyOfflineCache(reg.active);
+        showUpdate();
       }
     } catch { showOfflineIncomplete('Offline saving unavailable. Reconnect to retry.'); }
     finally { registrationTask = null; }
@@ -218,5 +222,10 @@ if ('serviceWorker' in navigator) {
     else verifyOfflineCache(navigator.serviceWorker.controller);
   });
   window.addEventListener('online', prepareOffline);
+  window.addEventListener('focus', prepareOffline);
+  window.addEventListener('pageshow', prepareOffline);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') prepareOffline();
+  });
   prepareOffline();
 } else $('#offline-status').innerHTML = '<span aria-hidden="true"></span>Online playback';
