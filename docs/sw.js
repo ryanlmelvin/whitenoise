@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'still-whitenoise-';
-const CACHE_NAME = `${CACHE_PREFIX}v15`;
+const CACHE_NAME = `${CACHE_PREFIX}v16`;
 const ASSETS = [
   './', './index.html', './styles.css', './app.js', './audio-engine.js', './manifest.webmanifest',
   './images/favicon.svg', './images/fan.svg', './images/rain.svg', './images/white-noise.svg', './images/brown-noise.svg',
