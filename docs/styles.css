@@ -24,3 +24,18 @@ input[type=range]::-moz-range-track{height:8px;border-radius:4px}
 input[type=range]::-webkit-slider-thumb{width:24px;height:24px;margin-top:-8px}
 input[type=range]::-moz-range-thumb{width:24px;height:24px}
 @media(max-width:700px){.player{flex-wrap:wrap}.now-playing{flex:1}.volume-group{order:3;flex-basis:100%;min-width:0;max-width:none}.volume-icon{display:block}output{font-size:13px;width:36px}}
+
+/* Trade unused card space for a prominent, full-width volume control. */
+.sound-card{padding:12px 20px 16px}
+.sound-art{height:110px;margin:0 auto 6px}
+.player{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 20px}
+.now-playing{min-width:0}
+.play-button{grid-column:2;grid-row:1}
+.volume-group{grid-column:1 / -1;grid-row:2;width:100%;min-width:0;max-width:none;margin:0}
+.volume-icon{display:block}
+input[type=range]{height:52px}
+input[type=range]::-webkit-slider-runnable-track{height:12px;border-radius:6px}
+input[type=range]::-moz-range-track{height:12px;border-radius:6px}
+input[type=range]::-webkit-slider-thumb{width:30px;height:30px;margin-top:-9px}
+input[type=range]::-moz-range-thumb{width:30px;height:30px}
+@media(max-width:600px){.sound-card{padding:10px 13px 13px}.sound-art{height:76px}.player{padding:16px}.volume-control{gap:12px}}
