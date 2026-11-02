@@ -33,7 +33,7 @@ const player = new SoundPlayer({
       card.setAttribute('aria-label', `${playing ? 'Pause' : 'Play'} ${soundName(card.dataset.sound)}`);
       card.querySelector('svg').innerHTML = playing ? pauseIcon : playIcon;
     }
-    $('#playback-note').textContent = state === 'loading' ? 'Getting your sound ready…' : state === 'interrupted' ? 'Playback was interrupted. Tap play to settle back in.' : 'Loops gently until you press pause.';
+    $('#playback-note').textContent = state === 'loading' ? 'Getting your sound ready…' : state === 'interrupted' ? 'Playback was interrupted. Tap play to settle back in.' : '';
     if ('mediaSession' in navigator) {
       navigator.mediaSession.playbackState = state === 'playing' ? 'playing' : 'paused';
       if ('MediaMetadata' in window) navigator.mediaSession.metadata = new MediaMetadata({
