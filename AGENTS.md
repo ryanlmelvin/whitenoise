@@ -1,6 +1,7 @@
 # Working on Still
 
 - The user wants this app published to their personal GitHub Pages site: https://ryanlmelvin.github.io/whitenoise/.
+- Publish completed changes by default after required checks pass, unless the user explicitly says not to publish.
 - Keep the app buildless and self-contained in `docs/`, with four sounds and a clean interface.
 - Run `npm test` and `npm run check` before publishing. Audio checks must cover the full tracks for spikes as well as the circular loop seams.
 - Bump the app-specific cache version in `docs/sw.js` for any shipped asset change. Never force a reload or update during playback.

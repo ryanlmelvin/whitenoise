@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#10171c">
   <meta name="description" content="Four comforting sounds, on repeat. A free, ad-free sleep sound app that works offline.">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Still">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.js"></script>
-  <title>Still · A little quiet</title>
+  <title>Still</title>
 </head>
 <body>
   <div class="app-shell">
@@ -23,38 +23,36 @@
     </header>
     <main>
       <div class="intro">
-        <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✦</span> MAKE ROOM FOR REST</p>
-        <h1>A little quiet.</h1>
-        <p class="intro-copy">Pick a sound. Settle in. Stay awhile.</p>
+        <h1>still</h1>
       </div>
 
       <section class="sound-grid" aria-label="Choose a sound">
         <button class="sound-card" data-sound="box-fan" aria-pressed="false" aria-label="Play Box fan">
-          <span class="card-top"><span class="sound-number">01</span><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
+          <span class="card-top"><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
           <img class="sound-art" src="./images/fan.svg" alt="" width="360" height="200">
-          <span class="card-copy"><span class="sound-title">Box fan</span><span class="sound-description">That familiar, steady hum.</span></span>
+          <span class="card-copy"><span class="sound-title">Box fan</span></span>
         </button>
         <button class="sound-card" data-sound="rain" aria-pressed="false" aria-label="Play Rain">
-          <span class="card-top"><span class="sound-number">02</span><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
+          <span class="card-top"><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
           <img class="sound-art" src="./images/rain.svg" alt="" width="360" height="200">
-          <span class="card-copy"><span class="sound-title">Rain</span><span class="sound-description">A rainy day, whenever you like.</span></span>
+          <span class="card-copy"><span class="sound-title">Rain</span></span>
         </button>
         <button class="sound-card" data-sound="white-noise" aria-pressed="false" aria-label="Play White noise">
-          <span class="card-top"><span class="sound-number">03</span><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
+          <span class="card-top"><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
           <img class="sound-art" src="./images/white-noise.svg" alt="" width="360" height="200">
-          <span class="card-copy"><span class="sound-title">White noise</span><span class="sound-description">An even wash of sound.</span></span>
+          <span class="card-copy"><span class="sound-title">White noise</span></span>
         </button>
         <button class="sound-card" data-sound="brown-noise" aria-pressed="false" aria-label="Play Brown noise">
-          <span class="card-top"><span class="sound-number">04</span><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
+          <span class="card-top"><span class="card-state" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span></span>
           <img class="sound-art" src="./images/brown-noise.svg" alt="" width="360" height="200">
-          <span class="card-copy"><span class="sound-title">Brown noise</span><span class="sound-description">A deeper, softer kind of hush.</span></span>
+          <span class="card-copy"><span class="sound-title">Brown noise</span></span>
         </button>
       </section>
 
       <section class="player" aria-label="Playback controls">
         <div class="now-playing">
           <span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-          <div><p class="player-label" id="player-label">READY WHEN YOU ARE</p><p class="player-title" id="player-title">Box fan</p></div>
+          <div><p class="player-label" id="player-label" hidden></p><p class="player-title" id="player-title">Box fan</p></div>
         </div>
         <div class="volume-group">
           <div class="volume-control">
@@ -75,7 +73,7 @@
       </div>
       <div class="update-notice" id="update-notice" hidden><p>A fresh version is ready.</p><button id="update-button" class="text-button">Update now</button></div>
     </main>
-    <footer><p>No ads. No accounts. Just a little quiet.</p><span class="footer-mark" aria-hidden="true">✧</span></footer>
+    <footer><p>No ads. No accounts. Just Still.</p><span class="footer-mark" aria-hidden="true">✧</span></footer>
   </div>
 
   <dialog id="about-dialog" aria-labelledby="about-title">

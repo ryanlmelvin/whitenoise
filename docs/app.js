@@ -23,7 +23,8 @@ const player = new SoundPlayer({
     const active = state === 'playing' || state === 'loading';
     document.body.classList.toggle('is-playing', state === 'playing');
     $('#player-title').textContent = soundName(sound);
-    $('#player-label').textContent = state === 'playing' ? 'PLAYING · ON REPEAT' : state === 'loading' ? 'GETTING COMFORTABLE' : 'READY WHEN YOU ARE';
+    $('#player-label').textContent = state === 'playing' ? 'PLAYING · ON REPEAT' : state === 'loading' ? 'GETTING COMFORTABLE' : '';
+    $('#player-label').hidden = !$('#player-label').textContent;
     $('#play-button').setAttribute('aria-label', `${active ? 'Pause' : 'Play'} ${soundName(sound)}`);
     $('#play-button svg').innerHTML = active ? pauseIcon : playIcon;
     for (const card of cards) {
@@ -36,7 +37,7 @@ const player = new SoundPlayer({
     if ('mediaSession' in navigator) {
       navigator.mediaSession.playbackState = state === 'playing' ? 'playing' : 'paused';
       if ('MediaMetadata' in window) navigator.mediaSession.metadata = new MediaMetadata({
-        title: soundName(sound), artist: 'Still', album: 'A little quiet',
+        title: soundName(sound), artist: 'Still', album: 'Still',
         artwork: [{ src: new URL('./images/app-icon-512.png', location.href).href, sizes: '512x512', type: 'image/png' }],
       });
     }
