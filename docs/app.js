@@ -93,16 +93,14 @@ let offlineReady = false;
 const standalone = matchMedia('(display-mode: standalone)');
 function updateInstallButton() {
   const installed = standalone.matches || navigator.standalone === true;
-  $('#install-button').disabled = installed;
-  if (installed) $('#install-button').textContent = 'Installed on this device';
+  $('#install-button').hidden = installed;
 }
 updateInstallButton();
 standalone.addEventListener('change', updateInstallButton);
 window.addEventListener('beforeinstallprompt', event => { event.preventDefault(); installPrompt = event; });
 window.addEventListener('appinstalled', () => {
   installPrompt = null;
-  $('#install-button').textContent = 'Installed on this device';
-  $('#install-button').disabled = true;
+  $('#install-button').hidden = true;
   $('#install-dialog').close();
 });
 $('#install-button').addEventListener('click', async () => {
