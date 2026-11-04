@@ -109,13 +109,6 @@ $('#install-button').addEventListener('click', async () => {
     installPrompt = null;
     try { await prompt.prompt(); await prompt.userChoice; return; } catch { /* Show manual steps if unavailable. */ }
   }
-  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  const safari = /Safari/.test(navigator.userAgent) && !/Chrome|Chromium|Edg/.test(navigator.userAgent);
-  $('#install-instructions').innerHTML = ios
-    ? '<ol><li>Open this page in <strong>Safari</strong>.</li><li>Tap <strong>Share</strong> (the square with an arrow).</li><li>Choose <strong>Add to Home Screen</strong>, then <strong>Add</strong>. If shown, leave <strong>Open as Web App</strong> on.</li></ol>'
-    : safari && /Mac/.test(navigator.platform)
-      ? '<ol><li>In Safari’s menu bar, choose <strong>File → Add to Dock</strong>.</li><li>Choose <strong>Add</strong>, then open Still from your Dock.</li></ol>'
-      : '<ol><li>Open your browser’s menu.</li><li>Choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li><li>If that option is missing, try Chrome or Edge, or bookmark Still to come back anytime.</li></ol>';
   $('#install-offline-note').textContent = offlineReady ? 'All four sounds are saved and ready offline on this browser.' : 'Keep Still open until “Ready offline” appears to save all four sounds.';
   $('#install-dialog').showModal();
 });
